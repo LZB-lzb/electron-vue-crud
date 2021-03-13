@@ -243,11 +243,6 @@
     color: #333;
     text-align: center;
 
-    .router {
-      text-decoration: none;
-      color: inherit;
-    }
-
     .r-content {
       padding: 0.5%;
       padding-right: 1.2%;

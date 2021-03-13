@@ -47,36 +47,36 @@ export default {
         })
       } else {
         // for循环法
-        // axios.get('/user').then(res => {
-        //   for (let i = 0; i < res.data.length; i++) {
-        //     if (res.data[i].name == form.name) {
-        //       return state.wrong2 = !state.wrong2
-        //     }
-        //   }
-        //   axios.post('/user', form).then(res => {
-        //     console.log(res.data)
-        //     state.login = Cookie.set('login', JSON.stringify(true), { expires: 1, path: '/' })
-        //     state.register = Cookie.set('register', JSON.stringify(true), { expires: 1, path: '/' })
-        //     window.location.reload()
-        //   })
-        // })
-
-        //find法 代码行数差不多 
         axios.get('/user').then(res => {
-          let i = res.data.find(item => {
-            if (item.name == form.name) {
+          for (let i = 0; i < res.data.length; i++) {
+            if (res.data[i].name == form.name) {
               return state.wrong2 = !state.wrong2
             }
-          })
-          if (!i) {
-            axios.post('/user', form).then(res => {
-              console.log(res.data)
-              state.login = Cookie.set('login', JSON.stringify(true), { expires: 1, path: '/' })
-              state.register = Cookie.set('register', JSON.stringify(true), { expires: 1, path: '/' })
-              window.location.reload()
-            })
           }
+          axios.post('/user', form).then(res => {
+            console.log(res.data)
+            state.login = Cookie.set('login', JSON.stringify(true), { expires: 1, path: '/' })
+            state.register = Cookie.set('register', JSON.stringify(true), { expires: 1, path: '/' })
+            window.location.reload()
+          })
         })
+
+        //find法 代码行数差不多 
+        // axios.get('/user').then(res => {
+        //   let i = res.data.find(item => {
+        //     if (item.name == form.name) {
+        //       return state.wrong2 = !state.wrong2
+        //     }
+        //   })
+        //   if (!i) {
+        //     axios.post('/user', form).then(res => {
+        //       console.log(res.data)
+        //       state.login = Cookie.set('login', JSON.stringify(true), { expires: 1, path: '/' })
+        //       state.register = Cookie.set('register', JSON.stringify(true), { expires: 1, path: '/' })
+        //       window.location.reload()
+        //     })
+        //   }
+        // })
       }
 
     },
