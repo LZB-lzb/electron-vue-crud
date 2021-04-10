@@ -41,7 +41,7 @@ export default {
               state.register = Cookie.set('register', JSON.stringify(true), { expires: 1, path: '/' })
               window.location.reload()
             } else {
-              state.wrong = !state.wrong
+              return state.wrong = !state.wrong
             }
           }
         })

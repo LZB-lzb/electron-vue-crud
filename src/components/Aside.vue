@@ -61,6 +61,9 @@
         this.$store.commit("selectMenu", index);
       },
     },
+    mounted() {
+      if(this.$store.state.menu.currentmenu==0){this.$router.push('/')}
+    },
   };
 </script>
 
@@ -79,7 +82,7 @@
     }
 
     &-vertical-demo.el-menu {
-      width: 12%;
+      width: 12vw;
       min-width: 150px;
       border: 0;
 

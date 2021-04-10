@@ -7,7 +7,7 @@
             <el-form-item label="菜品金额">
                 <el-input placeholder="请输入金额" prefix-icon="el-icon-s-goods" v-model="theshop.money"></el-input>
             </el-form-item>
-            <el-form-item label="活动形式">
+            <el-form-item label="商品描述">
                 <el-input v-model="theshop.message"></el-input>
             </el-form-item>
             <el-form-item>
@@ -50,6 +50,7 @@
                                 message: "更新成功!",
                             })
                         })
+                        .catch((err) => { err })
                 } this.$message({
                     message: "请正确输入餐品信息",
                     type: "warning",

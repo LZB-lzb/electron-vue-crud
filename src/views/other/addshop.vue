@@ -9,7 +9,7 @@
         <el-form-item label="信息可见">
             <el-switch v-model="delivery"></el-switch>
         </el-form-item>
-        <el-form-item label="活动形式">
+        <el-form-item label="商品描述">
             <el-input v-model="form.message"></el-input>
         </el-form-item>
         <el-form-item>
@@ -44,6 +44,7 @@
                                 message: "添加成功!",
                             })
                         })
+                        .catch((err) => { err })
                 } this.$message({
                     message: "请正确输入餐品信息",
                     type: "warning",

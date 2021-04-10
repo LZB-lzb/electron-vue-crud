@@ -191,6 +191,7 @@
                 }, 400);
               }, 2000);
             })
+            .catch((err)=>{err})
         }
         return this.$confirm("确定要登陆吗？")
           .then((_) => {
@@ -203,7 +204,7 @@
               }, 400);
             }, 2000);
           })
-
+          .catch((err)=>{err})
       },
       cancelForm() {
         this.loading = false;
@@ -244,9 +245,7 @@
     text-align: center;
 
     .r-content {
-      padding: 0.5%;
-      padding-right: 1.2%;
-
+      transform: translate(-1vw,1vh);
       .el-avatar--circle {
         cursor: pointer;
         transition: all 2s;
